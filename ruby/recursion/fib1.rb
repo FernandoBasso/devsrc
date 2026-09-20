@@ -48,11 +48,13 @@ end
 ##
 # Returns the nth number of the Fibonacci sequence.
 #
-# NOTE: Assumes the zeroth element as in https://oeis.org/A000045.
+# This implementation includes the zeroth element as
+# in https://oeis.org/A000045.
+#
+# ASSUME: `n >= 0`.
 #
 def fib(n)
-  return 0 if n == 0
-  return 1 if n == 1
+  return n if n <= 1
 
   return fib(n - 1) + fib(n - 2)
 end
