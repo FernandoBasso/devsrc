@@ -12,6 +12,10 @@ class Gear
     chainring / cog.to_f
   end
 
+  def diameter
+    rim + tire * 2
+  end
+
   ##
   # Assume rim and tier sizes are given in inches.
   #
@@ -19,7 +23,10 @@ class Gear
     ##
     # The tire goes around the rim twice for diameter.
     #
-    ratio * (rim + (tire * 2))
+    # We now use the diameter method instead, and each method has
+    # a single responsibility.
+    #
+    ratio * diameter
   end
 end
 
